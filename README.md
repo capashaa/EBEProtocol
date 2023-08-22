@@ -1337,15 +1337,15 @@ Sent to change your smiley.
 
 | Id  | Type      | Name   | Description
 | --- | ----      | ----   | -----------
-| `0` | `Integer` | Shape  | The smiley shape;
-| `1` | `Integer` | Colour | The smiley colour;
-| `2` | `Integer` | Border | The smiley border;
-| `3` | `Integer` | Eyes   | The smiley eyes;
-| `4` | `Integer` | Mouth  | The smiley mouth;
-| `5` | `Integer` | Addon  | The smiley addon;
-| `6` | `Integer` | Above  | The smiley above;
-| `7` | `Integer` | Below  | The smiley below;
-| `8` | `Integer` | Wings  | The smiley wings;
+| `0` | `Integer` | Shape  | The smiley shape
+| `1` | `Integer` | Colour | The smiley colour
+| `2` | `Integer` | Border | The smiley border
+| `3` | `Integer` | Eyes   | The smiley eyes
+| `4` | `Integer` | Mouth  | The smiley mouth
+| `5` | `Integer` | Addon  | The smiley addon
+| `6` | `Integer` | Above  | The smiley above
+| `7` | `Integer` | Below  | The smiley below
+| `8` | `Integer` | Wings  | The smiley wings
 
 ### <a id="sm-smileyGoldBorder">"smileyGoldBorder"</a>
 Sent to enable or disable the gold smiley border.
