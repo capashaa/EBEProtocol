@@ -191,27 +191,34 @@ Occurs when someone joins the world.
 | `0`  | `Integer`   | Id                 | The player's id.
 | `1`  | `String`    | Username           | The player's username.
 | `2`  | `String`    | ConnectUserId      | The player's unique user id.
-| `3`  | `Integer`   | Smiley             | The player's smiley id.
-| `4`  | `Double`    | X                  | The x coordinate of the player's position.
-| `5`  | `Double`    | Y                  | The y coordinate of the player's position.
-| `6`  | `Boolean`   | God Mode           | Value indicating whether the player is in god mode.
-| `7`  | `Boolean`   | Moderator Mode         | Value indicating whether the player is in moderator mode.
-| `8`  | `Boolean`   | Can Chat           | Value indicating whether the player is allowed to chat.
-| `9`  | `Integer`   | Gold Coins         | The amount of player's gold coins.
-| `10` | `Integer`   | Blue Coins         | The amount of player's blue coins.
-| `11` | `Integer`   | Deaths             | The amount of player's deaths.
-| `12` | `Boolean`   | Is Friend          | Value indicating whether the player is a friend.
-| `13` | `Boolean`   | Gold Membership    | Value indicating whether the player has gold membership.
-| `14` | `Boolean`   | Gold Smiley Border | Value indicating whether the player is wearing gold smiley border.
-| `15` | `Integer`   | Team               | The player's team id.  *See [Teams](#model-teams).*
-| `16` | `Integer`   | Aura Shape         | The player's aura shape id.
-| `17` | `Integer`   | Aura Color         | The player's aura color id.
-| `18` | `Uint`      | Chat Color         | The player's chat color.
-| `19` | `String`    | Badge              | The player's badge id. *See [Badges](#model-badges).*
-| `20` | `Boolean`   | Crew Member        | Value indicating whether the player is a member of the crew to which belongs this world.
-| `21` | `ByteArray` | Purple Switches    | Byte array of purple switch states.
-| `22` | `Boolean`   | Can Edit           | Value indicating whether the player can edit in this world.
-| `23` | `Boolean`   | Can Toggle Godmode | Value indicating whether the player can toggle godmode or not.
+| `3`  | `Integer`   | Shape              | The player's smiley shape.
+| `4`  | `Integer`   | Colour             | The player's smiley colour.
+| `5`  | `Integer`   | Border             | The player's smiley border.
+| `6`  | `Integer`   | Eyes               | The player's smiley eyes.
+| `7`  | `Integer`   | Mouth              | The player's smiley mouth.
+| `8`  | `Integer`   | Addon              | The player's smiley addon.
+| `9`  | `Integer`   | Above              | The player's smiley above.
+| `10`  | `Integer`   | Below              | The player's smiley below.
+| `11`  | `Integer`   | Wings              | The player's smiley wings.
+| `12`  | `Double`    | X                  | The x coordinate of the player's position.
+| `13`  | `Double`    | Y                  | The y coordinate of the player's position.
+| `14`  | `Boolean`   | God Mode           | Value indicating whether the player is in god mode.
+| `15`  | `Boolean`   | Moderator Mode         | Value indicating whether the player is in moderator mode.
+| `16`  | `Boolean`   | Can Chat           | Value indicating whether the player is allowed to chat.
+| `17`  | `Integer`   | Gold Coins         | The amount of player's gold coins.
+| `18` | `Integer`   | Blue Coins         | The amount of player's blue coins.
+| `19` | `Integer`   | Deaths             | The amount of player's deaths.
+| `20` | `Boolean`   | Is Friend          | Value indicating whether the player is a friend.
+| `21` | `Boolean`   | Gold Membership    | Value indicating whether the player has gold membership.
+| `22` | `Integer`   | Team               | The player's team id.  *See [Teams](#model-teams).*
+| `23` | `Integer`   | Aura Shape         | The player's aura shape id.
+| `24` | `Integer`   | Aura Color         | The player's aura color id.
+| `25` | `Uint`      | Chat Color         | The player's chat color.
+| `26` | `String`    | Badge              | The player's badge id. *See [Badges](#model-badges).*
+| `27` | `Boolean`   | Crew Member        | Value indicating whether the player is a member of the crew to which belongs this world.
+| `28` | `ByteArray` | Purple Switches    | Byte array of purple switch states.
+| `29` | `Boolean`   | Can Edit           | Value indicating whether the player can edit in this world.
+| `30` | `Boolean`   | Can Toggle Godmode | Value indicating whether the player can toggle godmode or not.
 
 > **NOTE:** This can only be received by the world owner.
 
@@ -449,7 +456,15 @@ Occurs when someone changes their smiley.
 | Id  | Type      | Name      | Description
 | --- | ----      | ----      | -----------
 | `0` | `Integer` | Player Id | The player's id.
-| `1` | `Integer` | Smiley    | The smiley id.
+| `1` | `Integer` | Shape | The player's smiley shape.
+| `2` | `Integer` | Colour | The player's smiley colour.
+| `3` | `Integer` | Border | The player's smiley border.
+| `4` | `Integer` | Eyes | The player's smiley eyes.
+| `5` | `Integer` | Mouth | The player's smiley mouth.
+| `6` | `Integer` | Addon | The player's smiley addon.
+| `7` | `Integer` | Above | The player's smiley above.
+| `8` | `Integer` | Below | The player's smiley below.
+| `9` | `Integer` | Wings  | The player's smiley wings.
 
 ### <a id="rm-favorited">"favorited"</a>
 Occurs when you favorited the world.
@@ -542,43 +557,48 @@ Occurs when the player initially joins the room.
 | `3`     | `Integer`   | Favorites                  | The amount of favorites.
 | `4`     | `Integer`   | Likes                      | The amount of likes.
 | `5`     | `Integer`   | Player Id                  | The player's id.
-| `6`     | `Integer`   | Smiley                     | The player's smiley id.
-| `7`     | `Integer`   | Aura Shape                 | The player's aura shape id.
-| `8`     | `Integer`   | Aura Color                 | The player's aura color id.
-| `9`     | `Boolean`   | Gold Smiley Border         | Value indicating whether the player is wearing gold smiley border.
-| `10`    | `Double`    | X                          | The x coordinate of the player's spawn position.
-| `11`    | `Double`    | Y                          | The y coordinate of the player's spawn position.
-| `12`    | `UInt`      | Chat Color                 | The player's chat color.
-| `13`    | `String`    | Username                   | The player's username.
-| `14`    | `Boolean`   | Can Edit                   | Value indicating whether the player can edit.
-| `15`    | `Boolean`   | Is Owner                   | Value indicating whether the player is world owner.
-| `16`    | `Boolean`   | Favorited                  | Value indicating whether the player has favorited this world.
-| `17`    | `Boolean`   | Liked                      | Value indicating whether the player has liked this world.
-| `18`    | `Integer`   | World Width                | The width of the world.
-| `19`    | `Integer`   | World Height               | The height of the world.
-| `20`    | `Double`    | World Gravity Multiplier   | The world's gravity multiplier.
-| `21`    | `UInt`      | Background Color           | The color of the background. **NOTE:** Transparent color means that the custom background color is disabled.
-| `22`    | `Boolean`   | Accessible                 | Value indicating whether this world is accessible by other players.
-| `23`    | `Boolean`   | Hidden From Lobby          | Value indicating whether this world is hidden from the lobby and profile.
-| `24`    | `Boolean`   | Spectating Allowed         | Value indicating whether spectating in this world is allowed.
-| `25`    | `String`    | Description                | The description of the world.
-| `26`    | `Integer`   | Curse Limit                | The curse limit.
-| `27`    | `Integer`   | Zombie Limit               | The zombie limit.
-| `28`    | `Boolean`   | Belongs To Campaign        | Value indicating whether this world is part of a campaign.
-| `29`    | `String`    | Crew Id                    | The id of the crew to which belongs this world.
-| `30`    | `String`    | Crew Name                  | The name of the crew to which belongs this world.
-| `31`    | `Boolean`   | Can Change World Options   | Value indicating whether the player can change world options.
-| `32`    | `Integer`   | Crew Status                | The crew status of the world. *See [Crew World Status](#model-crew-status).*
-| `33`    | `String`    | Badge                      | The player's badge id. *See [Badges](#model-badges).*
-| `34`    | `Boolean`   | Is Crew Member             | Value indicating whether the player is a member of the crew to which belongs this world.
-| `35`    | `Boolean`   | Minimap Enabled            | Value indicating whether the minimap is enabled in this world.
-| `36`    | `Boolean`   | Lobby Preview Enabled      | Value indicating whether the lobby preview is enabled in this world.
-| `37`    | `ByteArray` | Orange Switches            | Byte array with states of orange switches
-| `38`    | `Boolean`   | FriendsOnly                | If the world is set to friends only
-| `39`    | `Boolean`   | IsArtContest               | Is Art Contest.
-| `40`    | `String`    | Owner Id                   | The id of the owner.
-| `41`    | `Boolean`   | Toggle godmode             | Can toggle godmode.
-| `42`    | `String`    | ws                         | Indicates the start of the world data.
+| `6`     | `Integer`   | SmileyShape                | The player's smiley shape.
+| `7`     | `Integer`   | SmileyColour               | The player's smiley colour.
+| `8`     | `Integer`   | SmileyBorder               | The player's smiley border.
+| `9`     | `Integer`   | SmileyEyes               | The player's smiley eyes.
+| `10`     | `Integer`   | SmileyMouth               | The player's smiley mouth.
+| `11`     | `Integer`   | SmileyAddon               | The player's smiley addon.
+| `12`     | `Integer`   | SmileyAbove                | The player's smiley above.
+| `13`     | `Integer`   | SmileyBelow               | The player's smiley below.
+| `14`     | `Integer`   | SmileyWings                | The player's smiley wings.
+| `15`     | `Integer`   | Aura Shape                 | The player's aura shape id.
+| `16`     | `Integer`   | Aura Color                 | The player's aura color id.
+| `17`    | `Double`    | X                          | The x coordinate of the player's spawn position.
+| `18`    | `Double`    | Y                          | The y coordinate of the player's spawn position.
+| `19`    | `UInt`      | Chat Color                 | The player's chat color.
+| `20`    | `String`    | Username                   | The player's username.
+| `21`    | `Boolean`   | Can Edit                   | Value indicating whether the player can edit.
+| `22`    | `Boolean`   | Is Owner                   | Value indicating whether the player is world owner.
+| `23`    | `Boolean`   | Favorited                  | Value indicating whether the player has favorited this world.
+| `24`    | `Boolean`   | Liked                      | Value indicating whether the player has liked this world.
+| `25`    | `Integer`   | World Width                | The width of the world.
+| `26`    | `Integer`   | World Height               | The height of the world.
+| `27`    | `Double`    | World Gravity Multiplier   | The world's gravity multiplier.
+| `28`    | `UInt`      | Background Color           | The color of the background. **NOTE:** Transparent color means that the custom background color is disabled.
+| `29`    | `Boolean`   | Accessible                 | Value indicating whether this world is accessible by other players.
+| `30`    | `Boolean`   | Hidden From Lobby          | Value indicating whether this world is hidden from the lobby and profile.
+| `31`    | `Boolean`   | Spectating Allowed         | Value indicating whether spectating in this world is allowed.
+| `32`    | `String`    | Description                | The description of the world.
+| `33`    | `Integer`   | Curse Limit                | The curse limit.
+| `34`    | `Integer`   | Zombie Limit               | The zombie limit.
+| `35`    | `Boolean`   | Belongs To Campaign        | Value indicating whether this world is part of a campaign.
+| `36`    | `String`    | Crew Id                    | The id of the crew to which belongs this world.
+| `37`    | `String`    | Crew Name                  | The name of the crew to which belongs this world.
+| `38`    | `Boolean`   | Can Change World Options   | Value indicating whether the player can change world options.
+| `39`    | `Integer`   | Crew Status                | The crew status of the world. *See [Crew World Status](#model-crew-status).*
+| `40`    | `String`    | Badge                      | The player's badge id. *See [Badges](#model-badges).*
+| `41`    | `Boolean`   | Is Crew Member             | Value indicating whether the player is a member of the crew to which belongs this world.
+| `42`    | `Boolean`   | Minimap Enabled            | Value indicating whether the minimap is enabled in this world.
+| `43`    | `Boolean`   | Lobby Preview Enabled      | Value indicating whether the lobby preview is enabled in this world.
+| `44`    | `ByteArray` | Orange Switches            | Byte array with states of orange switches
+| `45`    | `Boolean`   | FriendsOnly                | If the world is set to friends only
+| `46`    | `Boolean`   | IsArtContest               | Is Art Contest.
+| `47`    | `String`    | ws                         | Indicates the start of the world data.
 | `[...]` | `[...]`     | The serialized world data. | Indicates the world data.
 | `[...]` | `String`    | we                         | Indicates the end of the world data.
 
@@ -1317,7 +1337,15 @@ Sent to change your smiley.
 
 | Id  | Type      | Name   | Description
 | --- | ----      | ----   | -----------
-| `0` | `Integer` | Smiley | The smiley id.
+| `0` | `Integer` | Shape  | The smiley shape;
+| `1` | `Integer` | Colour | The smiley colour;
+| `2` | `Integer` | Border | The smiley border;
+| `3` | `Integer` | Eyes   | The smiley eyes;
+| `4` | `Integer` | Mouth  | The smiley mouth;
+| `5` | `Integer` | Addon  | The smiley addon;
+| `6` | `Integer` | Above  | The smiley above;
+| `7` | `Integer` | Below  | The smiley below;
+| `8` | `Integer` | Wings  | The smiley wings;
 
 ### <a id="sm-smileyGoldBorder">"smileyGoldBorder"</a>
 Sent to enable or disable the gold smiley border.
