@@ -1,6 +1,8 @@
 # Everybody Edits Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
+This page is under construction.  
+
 ## Table of contents
 - [Game Information](#game-information)
 - [Room Types](#room-types)
