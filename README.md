@@ -1455,3 +1455,4 @@ Sent to un-like the world.
 | ![santa](https://github.com/capashaa/EBEProtocol/blob/main/images/npcsanta.png)   | `Santa` | `1576`
 | ![snowman](https://github.com/capashaa/EBEProtocol/blob/main/images/npcsnowman.png)   | `Snowman` | `1577`
 | ![walrus](https://github.com/capashaa/EBEProtocol/blob/main/images/npcwalrus.png)   | `Walrus` | `1578`
+| ![crab](https://github.com/capashaa/EBEProtocol/blob/main/images/npcCrab.png)   | `Crab` | `1579`
