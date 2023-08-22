@@ -1,4 +1,7 @@
 # How to connect to Lobby
+
+This page is not updated
+
 [Connect to Lobby (Pastebin)](https://pastebin.com/A8YGNyum)  
 [Loop through ss and se settings(Pastebin)](https://pastebin.com/iBGW0TUa)  
 
