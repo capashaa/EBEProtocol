@@ -1,4 +1,4 @@
-# Everybody Edits Messages Protocol
+# Every Build Exist Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
 This page is under construction.  
