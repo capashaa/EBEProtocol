@@ -465,6 +465,8 @@ Occurs when someone changes their smiley.
 | `7` | `Integer` | Above | The player's smiley above.
 | `8` | `Integer` | Below | The player's smiley below.
 | `9` | `Integer` | Wings  | The player's smiley wings.
+Use this code as example to be able to read different faces:  
+[https://pastebin.com/kdZg5rAv](https://pastebin.com/kdZg5rAv) 
 
 ### <a id="rm-favorited">"favorited"</a>
 Occurs when you favorited the world.
@@ -1346,6 +1348,9 @@ Sent to change your smiley.
 | `6` | `Integer` | Above  | The smiley above
 | `7` | `Integer` | Below  | The smiley below
 | `8` | `Integer` | Wings  | The smiley wings
+
+Use this code as example to be able to send different faces:  
+[https://pastebin.com/kdZg5rAv](https://pastebin.com/kdZg5rAv)  
 
 ### <a id="sm-smileyGoldBorder">"smileyGoldBorder"</a>
 Sent to enable or disable the gold smiley border.
