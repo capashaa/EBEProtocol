@@ -601,8 +601,9 @@ Occurs when the player initially joins the room.
 | `43`    | `Boolean`   | Lobby Preview Enabled      | Value indicating whether the lobby preview is enabled in this world.
 | `44`    | `ByteArray` | Orange Switches            | Byte array with states of orange switches
 | `45`    | `Boolean`   | FriendsOnly                | If the world is set to friends only
-| `46`    | `Boolean`   | IsArtContest               | Is Art Contest.
-| `47`    | `String`    | ws                         | Indicates the start of the world data.
+| `46`    | `String`    | OwnerId                    | The owners ID.
+| `47`    | `Boolean`   | Can toggle godmode         | If the user can toggle godmode.
+| `48`    | `String`    | ws                         | Indicates the start of the world data.
 | `[...]` | `[...]`     | The serialized world data. | Indicates the world data.
 | `[...]` | `String`    | we                         | Indicates the end of the world data.
 
