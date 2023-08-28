@@ -466,7 +466,8 @@ Occurs when someone changes their smiley.
 | `6` | `Integer` | Addon | The player's smiley addon.
 | `7` | `Integer` | Above | The player's smiley above.
 | `8` | `Integer` | Below | The player's smiley below.
-| `9` | `Integer` | Wings  | The player's smiley wings.
+| `9` | `Integer` | Wings  | The player's smiley wings.  
+
 Use this code as example to be able to read different faces:  
 [https://pastebin.com/kdZg5rAv](https://pastebin.com/kdZg5rAv) 
 
@@ -1350,7 +1351,7 @@ Sent to change your smiley.
 | `5` | `Integer` | Addon  | The smiley addon
 | `6` | `Integer` | Above  | The smiley above
 | `7` | `Integer` | Below  | The smiley below
-| `8` | `Integer` | Wings  | The smiley wings
+| `8` | `Integer` | Wings  | The smiley wings  
 
 Use this code as example to be able to send different faces:  
 [https://pastebin.com/kdZg5rAv](https://pastebin.com/kdZg5rAv)  
