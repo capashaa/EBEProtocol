@@ -18,6 +18,7 @@ This page is under construction.
   - [badgeChange](#rm-badgeChange)
   - [banned](#rm-banned)
   - [bc](#rm-bc)
+  - [bco](#rm-bco)
   - [bn](#rm-bn)
   - [br](#rm-br)
   - [bs](#rm-bs)
@@ -146,6 +147,7 @@ This page is under construction.
   - [Auto Text](#model-auto-text)
   - [Badges](#model-badges)
   - [Campaign Status](#model-campaign-status)
+  - [Colored Blocks](#model-cblocks)
   - [Crew World Status](#model-crew-status)
   - [Effects](#model-effects)
   - [Keys](#model-keys)
@@ -296,6 +298,18 @@ Occurs when a block with a number value is placed in the world or effect.
 | `3` | `UInt` | Number Value | The number value.
 | `4` | `UInt` | Player Id    | The id of the player which placed this block.
 
+### <a id="rm-bco">"bco"</a>
+Occurs when a block that is using a color get placed.  
+
+| Id  | Type   | Name         | Description
+| --- | ----   | ----         | -----------
+| `0` | `UInt` | X            | The x coordinate of the block's position.
+| `1` | `UInt` | Y            | The y coordinate of the block's position.
+| `2` | `UInt` | Block Id     | The block's id. See [Block ids](#model-cblocks).
+| `3` | `UInt` | Colour       | The decimal number of the colour.
+| `4` | `Integer`  | Layer        | The layer of the block.
+| `4` | `UInt` | Player Id        | The id of the player which placed this block.
+
 
 
 ### <a id="rm-bn">"bn"</a>
@@ -305,7 +319,7 @@ Occurs when placing a NPC in the world.
 | --- | ----     | ----         | -----------
 | `0` | `UInt`   | X            | The x coordinate of the NPC position.
 | `1` | `UInt`   | Y            | The y coordinate of the NPC position.
-| `2` | `UInt`   | NPC Block Id | The NPC Block Id. *See [NPC's ids](#model-npcid).
+| `2` | `UInt`   | NPC Block Id | The NPC Block Id. See [NPC's ids](#model-npcid).
 | `3` | `String` | NPC Name     | The name of the NPC.
 | `4` | `String` | NPC Text     | The first text from the NPC
 | `5` | `String` | NPC Text     | The second text from the NPC
@@ -1421,6 +1435,21 @@ Sent to un-like the world.
 | `0`   | Unlocked
 | `1`   | Completed
 | `2`   | Beta Only
+
+### <a id="model-cblocks">Colored blocks</a>
+| Name    | ID
+| -----   | ----------
+| Plain   |  631
+| Canvas  |  632
+| Checker |  633
+
+How to send coloured blocks. 
+**Example:**
+```
+conn.Send("b",1,9,9,631,4294901760);
+```
+**How to convert Colour in C#**
+https://pastebin.com/WqG5HjUN
 
 ### <a id="model-crew-status">Crew World Status</a>
 
