@@ -1305,7 +1305,8 @@ Sent to change the switch state.
 | `4` | `Boolean` | Enabled     | Value indicating whether the switch is enabled.
 
 ### <a id="sm-registercommand">"registercommand"</a>
-Sent to server to create a custom slash command (Can only be sent by world owner)
+Sent to server to create a custom slash command
+> **NOTE:** This can only be sent by the world owner.
 
 | Id  | Type     | Name    | Description
 | --- | ----     | ----    | -----------
@@ -1460,7 +1461,8 @@ Sent to un-favorite the world.
 Sent to un-like the world.
 
 ### <a id="sm-unregistercommand">"unregistercommand"</a>
-sent to server to remove a custom slash command (Can only be sent by world owner)
+sent to server to remove a custom slash command
+> **NOTE:** This can only be sent by the world owner.
 
 | Id  | Type     | Name    | Description
 | --- | ----     | ----    | -----------
