@@ -170,13 +170,14 @@ Version = 229
 
 # <a id="room-types">Room Types</a>
 
-| Type        | Room Name
-| ----        | ---------
-| Normal      | Everybuildexists{version}
-| Beta        | Beta{version}
-| Lobby       | Lobby{version}
-| Crew Lobby  | CrewLobby{version}
-| Lobby Guest | LobbyGuest{version}
+| Type        | Room Name | Description
+| ----        | --------- |  --------- 
+| Normal      | Everybuildexists{version} | Join the EBE Worlds. To use/read commands read inside this document. |
+| Public | Public | Join the EBE Worlds. To use/read commands read inside this document.
+| Beta        | Beta{version} | Join Beta worlds. |
+| Lobby       | Lobby{version} | Join Lobby. If you want to execute commands or read them, look in Lobby documentations. |
+| Crew Lobby  | CrewLobby{version} | Join crew lobby |
+| Lobby Guest | LobbyGuest{version} | Join Guest lobby |
 
 (Replace {version} with the current version)  
 Or use:
