@@ -1,7 +1,7 @@
 # Every Build Exist Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
-This page is under construction.  
+Version of Protocol: 2.2.9
 
 ## Table of contents
 - [Game Information](#game-information)
@@ -26,6 +26,7 @@ This page is under construction.
   - [campaignRewards](#rm-campaignRewards)
   - [canAddToCrews](#rm-canAddToCrews)
   - [clear](#rm-clear)
+  - [command](#rm-comand)
   - [completedLevel](#rm-completedLevel)
   - [crewAddRequest](#rm-crewAddRequest)
   - [crewAddRequestFailed](#rm-crewAddRequestFailed)
@@ -65,6 +66,7 @@ This page is under construction.
   - [ps](#rm-ps)
   - [psi](#rm-psi)
   - [pt](#rm-pt)
+  - [registercommand](#rm-registercommand)
   - [reset](#rm-reset)
   - [resetGlobalSwitches](#rm-resetGlobalSwitches)
   - [restoreProgress](#rm-restoreProgress)
@@ -84,6 +86,7 @@ This page is under construction.
   - [ts](#rm-ts)
   - [unfavorited](#rm-unfavorited)
   - [unliked](#rm-unliked)
+  - [unregistercommand](#rm-unregistercommand)
   - [updatemeta](#rm-updatemeta)
   - [upgrade](#rm-upgrade)
   - [worldReleased](#rm-worldReleased)
@@ -122,6 +125,7 @@ This page is under construction.
   - [pressKey](#sm-pressKey)
   - [pm](#sm-pm)
   - [ps](#sm-ps)
+  - [registercommand](#sm-registercommand)
   - [rejectAddToCrew](#sm-rejectAddToCrew)
   - [requestAddToCrew](#sm-requestAddToCrew)
   - [reset](#sm-reset)
@@ -143,6 +147,7 @@ This page is under construction.
   - [touch](#sm-touch)
   - [unfavorite](#sm-unfavorite)
   - [unlike](#sm-unlike)
+  - [unregistercommand](#sm-unregistercommand)
 - [Models](#models)
   - [Auto Text](#model-auto-text)
   - [Badges](#model-badges)
@@ -158,7 +163,7 @@ ___
 # <a id="game-information">Game Information</a>
 ```
 GameID = every-build-exists-d6aoqro023pzodrp9jhw
-Version = 225
+Version = 229
 ```
 
 *NOTE: the game ID is required to log into PlayerIO to send requests.*
@@ -172,13 +177,11 @@ Version = 225
 | Lobby       | Lobby{version}
 | Crew Lobby  | CrewLobby{version}
 | Lobby Guest | LobbyGuest{version}
-| ?           | TRoom
-| ?           | CampaignManager
-| Linked      | AuthRoom
-| ?           | ToolRoom
 
 (Replace {version} with the current version)  
-Or use client.BigDB.Load("config","config")["version"] to get latest version.
+Or use:
+ ``client.BigDB.Load("config","config")["version"]``
+To be able to getting latest version.
 
 # <a id="receive-messages">Receive messages</a>
 
@@ -308,7 +311,7 @@ Occurs when a block that is using a color get placed.
 | `2` | `UInt` | Block Id     | The block's id. See [Block ids](#model-cblocks).
 | `3` | `UInt` | Colour       | The decimal number of the colour.
 | `4` | `Integer`  | Layer        | The layer of the block.
-| `4` | `UInt` | Player Id        | The id of the player which placed this block.
+| `5` | `UInt` | Player Id        | The id of the player which placed this block.
 
 
 
@@ -409,6 +412,15 @@ Occurs when the world is cleared.
 | `1` | `Integer` | Height          | The height of the world.
 | `2` | `UInt`    | Border Block Id | The id of the block used as a world border.
 | `3` | `UInt`    | Fill Block Id   | The id of the block used to fill the world.
+
+### <a id="rm-command">"command"</a>
+Received by bot account once a user uses a custom slash command.
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `Integer` | Player ID | The Player's id that used the command.  
+| `1` | `String`  | cmdName | Command Name.
+| `[...]` | `String`  | Arguments | The arguments from user.
 
 ### <a id="rm-completedLevel">"completedLevel"</a>
 Occurs when touching a win trophy (completing the world.)
@@ -778,6 +790,19 @@ Occurs when a portal is placed in the world.
 | `5` | `UInt`    | Portal Target   | The portal target id.
 | `6` | `Integer` | Player Id       | The id of the player which placed this block.
 
+
+
+### <a id="rm-registercommand">"registercommand"</a>
+Received once a command is registered.
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `Boolean` | Success | If the command is successfully added.
+| `1` | `String`  | cmdName/ErrorMsg | Command Name or Error message.
+
+
+
+
 ### <a id="rm-reset">"reset"</a>
 Occurs when world is reverted to the last save using the /loadlevel command.
 
@@ -938,6 +963,14 @@ Occurs when you un-favorite the world.
 ### <a id="rm-unliked">"unliked"</a>
 Occurs when you un-like the world.
 
+### <a id="rm-unregistercommand">"unregistercommand"</a>
+Received once a command is unregistered.
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `Boolean` | Success | If the command is successfully removed.
+| `1` | `String`  | cmdName/ErrorMsg | Command Name or Error message.
+
 ### <a id="rm-updatemeta">"updatemeta"</a>
 Occurs when world metadata is updated.
 
@@ -1028,7 +1061,7 @@ Additional arguments:
 | Id  | Type     | Name       | Description
 | --- | ----     | ----       | -----------
 | `4` | `String` | Text       | The text.
-| `5` | `String` | Text Color | The text color in Hex.
+| `5` | `String` | Text Colour | The text colour in Hex.
 | `6` | `Integer`| Wrap       | Wrap the text.
 
 - For blocks with a number value:
@@ -1067,6 +1100,17 @@ Additional arguments:
 | `5` | `String`  | First Message  | The first NPC message
 | `6` | `String`  | Second Message | The second NPC message
 | `7` | `String`  | Third Message  | The third NPC message
+
+- For Coloured blocks:
+
+**How to convert Colour in C#**
+https://pastebin.com/WqG5HjUN
+
+| Id  | Type      | Name           | Description
+| --- | ----      | ----           | -----------
+| `4` | `Uint`    | Colour         | The coloured block in decimal.
+
+
 
 ### <a id="sm-c">"c"</a>
 Sent to collect a coin.
@@ -1259,6 +1303,13 @@ Sent to change the switch state.
 | `3` | `Integer` | Switch Id   | The switch id.
 | `4` | `Boolean` | Enabled     | Value indicating whether the switch is enabled.
 
+### <a id="sm-registercommand">"registercommand"</a>
+Sent to server to create a custom slash command (Can only be sent by world owner)
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `String`  | cmdName | Command Name.
+
 ### <a id="sm-rejectAddToCrew">"rejectAddToCrew"</a>
 Sent to reject add to crew request.
 
@@ -1407,6 +1458,13 @@ Sent to un-favorite the world.
 ### <a id="sm-unlike">"unlike"</a>
 Sent to un-like the world.
 
+### <a id="sm-unregistercommand">"unregistercommand"</a>
+sent to server to remove a custom slash command (Can only be sent by world owner)
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `String`  | cmdName | Command Name.
+
 # <a id="models">Models</a>
 
 ### <a id="model-auto-text">Auto Text</a>
@@ -1442,14 +1500,6 @@ Sent to un-like the world.
 | Plain   |  631
 | Canvas  |  632
 | Checker |  633
-
-How to send coloured blocks. 
-**Example:**
-```
-conn.Send("b",1,9,9,631,4294901760);
-```
-**How to convert Colour in C#**
-https://pastebin.com/WqG5HjUN
 
 ### <a id="model-crew-status">Crew World Status</a>
 
