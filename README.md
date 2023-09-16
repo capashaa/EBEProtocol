@@ -142,13 +142,13 @@ Version of Protocol: 2.3.0
   - [setZombieLimit](#sm-setZombieLimit)
   - [smiley](#sm-smiley)
   - [smileyGoldBorder](#sm-smileyGoldBorder)
+  - [system](#sm-botwrite)
   - [team](#sm-team)
   - [time](#sm-time)
   - [touch](#sm-touch)
   - [unfavorite](#sm-unfavorite)
   - [unlike](#sm-unlike)
   - [unregistercommand](#sm-unregistercommand)
-  - [write](#sm-botwrite)
 - [Models](#models)
   - [Auto Text](#model-auto-text)
   - [Badges](#model-badges)
@@ -305,6 +305,7 @@ Occurs when a block with a number value is placed in the world or effect.
 
 ### <a id="rm-bco">"bco"</a>
 Occurs when a block that is using a color get placed.  
+> ID: 631, 632, 633
 
 | Id  | Type   | Name         | Description
 | --- | ----   | ----         | -----------
@@ -678,6 +679,7 @@ Occurs when a player touches a silver crown.
 
 ### <a id="rm-lb">"lb"</a>
 Occurs when a player places a label block.
+> ID: 1000
 
 | Id  | Type      | Name       | Description
 | --- | ----      | ----       | -----------
@@ -781,7 +783,6 @@ Occurs when initial switch states are sent after you join the world.
 
 ### <a id="rm-pt">"pt"</a>
 Occurs when a portal is placed in the world.
-
 | Id  | Type      | Name            | Description
 | --- | ----      | ----            | -----------
 | `0` | `UInt`    | X               | The x coordinate of the block's position.
@@ -992,6 +993,7 @@ Occurs when a crew world has been released.
 
 ### <a id="rm-wp">"wp"</a>
 Occurs when a world portal is placed in the world.
+> ID: 374
 
 | Id  | Type     | Name      | Description
 | --- | ----     | ----      | -----------
@@ -1431,6 +1433,12 @@ Sent to enable or disable the gold smiley border.
 | --- | ----      | ----               | -----------
 | `0` | `Boolean` | Gold Smiley Border | Value indicating whether the gold smiley border should be enabled.
 
+### <a id="sm-botwrite">"system"</a>
+Use this message to write out * Bot and then a message after as a system message.
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `String`  | Message | Message you want to use.
 
 ### <a id="sm-team">"team"</a>
 Sent to change your team.
@@ -1468,13 +1476,6 @@ sent to server to remove a custom slash command
 | Id  | Type     | Name    | Description
 | --- | ----     | ----    | -----------
 | `0` | `String`  | cmdName | Command Name.
-
-### <a id="sm-botwrite">"system"</a>
-Use this message to write out * Bot and then a message after as a system message.
-
-| Id  | Type     | Name    | Description
-| --- | ----     | ----    | -----------
-| `0` | `String`  | Message | Message you want to use.
 
 # <a id="models">Models</a>
 
