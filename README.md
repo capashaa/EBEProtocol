@@ -1,7 +1,7 @@
 # Every Build Exist Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
-Version of Protocol: 2.2.9
+Version of Protocol: 2.3.0
 
 ## Table of contents
 - [Game Information](#game-information)
@@ -148,6 +148,7 @@ Version of Protocol: 2.2.9
   - [unfavorite](#sm-unfavorite)
   - [unlike](#sm-unlike)
   - [unregistercommand](#sm-unregistercommand)
+  - [write](#sm-botwrite)
 - [Models](#models)
   - [Auto Text](#model-auto-text)
   - [Badges](#model-badges)
@@ -163,7 +164,7 @@ ___
 # <a id="game-information">Game Information</a>
 ```
 GameID = every-build-exists-d6aoqro023pzodrp9jhw
-Version = 229
+Version = 230
 ```
 
 *NOTE: the game ID is required to log into PlayerIO to send requests.*
@@ -1467,6 +1468,13 @@ sent to server to remove a custom slash command
 | Id  | Type     | Name    | Description
 | --- | ----     | ----    | -----------
 | `0` | `String`  | cmdName | Command Name.
+
+### <a id="sm-botwrite">"system"</a>
+Use this message to write out * Bot and then a message after as a system message.
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `String`  | Message | Message you want to use.
 
 # <a id="models">Models</a>
 

@@ -1,9 +1,8 @@
 # How to connect to Lobby
 
-This page is not updated
+Updated for: 2.3.0
 
-[Connect to Lobby (Pastebin)](https://pastebin.com/A8YGNyum)  
-[Loop through ss and se settings(Pastebin)](https://pastebin.com/iBGW0TUa)  
+[Connect to Lobby (Pastebin)](https://pastebin.com/fAA99yr3)  
 
 ## Send messages
 ### Get Information
@@ -28,8 +27,7 @@ This page is not updated
 | `getNotifications`    	| None       | Get notifications from news.                           |
 | `getNews`             	| `""`       | Get the news from EE.                                  |
 | `checkUsername`    		| `Nickname` | Check if the nickname is already registered 			  |
-
-
+| `getSavedSmileys`         | None       | Get multiple messages that contains saved smiley information. |
 
 
 ### Send Information
@@ -56,6 +54,11 @@ This page is not updated
 | `setUsername`         | `Nickname`              | Set your nickname on your new account.               |
 | `changeUsername`      | `Nickname`              | Change your nickname to a new one.                   |
 | `acceptTerms`         | None                    | Accept the EE terms.                                 |
+| `getSavedSmileys`     | None                    | Send a message to grab saved smileys.                   |
+| `removesmiley`        | `...`                  | Remove the smiley (you need to include all parts)                   |
+| `savesmiley`          | `...`                  | Saves current made smiley. (You need to include all parts)  |          
+
+
 
 ## Get information from getShop
 Occurs when you send getShop in Lobby.
