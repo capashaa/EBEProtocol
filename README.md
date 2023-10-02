@@ -1,7 +1,7 @@
 # Every Build Exist Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
-Version of Protocol: 2.3.0
+Version of Protocol: 2.3.2
 
 ## Table of contents
 - [Game Information](#game-information)
@@ -634,8 +634,12 @@ Occurs when the player initially joins the room.
 | `46`    | `String`    | OwnerId                    | The owners ID.
 | `47`    | `Boolean`   | Can toggle godmode         | If the user can toggle godmode.
 | `48`    | `String`    | ws                         | Indicates the start of the world data.
-| `[...]` | `[...]`     | The serialized world data. | Indicates the world data.
-| `[...]` | `String`    | we                         | Indicates the end of the world data.
+| `49` | `ByteArray`     | The serialized world data. | Indicates the world data.
+| `50` | `String`    | we                         | Indicates the end of the world data.
+
+**How to read the ByteArray:**  
+You need: [BitConverter](https://pastebin.com/TNJe3ZEb)  
+How to Read: [Example Code](https://pastebin.com/K6UQFqUN)
 
 ### <a id="rm-init2">"init2"</a>
 Occurs when joining world is completed.
