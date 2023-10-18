@@ -28,6 +28,7 @@ Version of Protocol: 2.3.2
   - [clear](#rm-clear)
   - [command](#rm-comand)
   - [completedLevel](#rm-completedLevel)
+  - [confirm](#rm-confirm)
   - [crewAddRequest](#rm-crewAddRequest)
   - [crewAddRequestFailed](#rm-crewAddRequestFailed)
   - [dontPanic](#rm-dontPanic)
@@ -100,6 +101,7 @@ Version of Protocol: 2.3.2
   - [autosay](#sm-autosay)
   - [b](#sm-b)
   - [c](#sm-c)
+  - [confirm](#sm-confirm)
   - [crown](#sm-crown)
   - [caketouch](#sm-caketouch)
   - [checkpoint](#sm-checkpoint)
@@ -429,6 +431,15 @@ Received by bot account once a user uses a custom slash command.
 Occurs when touching a win trophy (completing the world.)
 
 **NOTE:** If player received campaign rewards, the ["campaignRewards"](#rm-campaignRewards) message is received instead.
+
+### <a id="rm-confirm">"confirm"</a>
+Received by staff if the world is set to friends only or nobody.   
+It will ask if you want to join or not.
+
+| Id  | Type     | Name    | Description
+| --- | ----     | ----    | -----------
+| `0` | `String` | Message | Confirm message.  
+| `1` | `String`  | Message | Why you can't join the world.
 
 ### <a id="rm-crewAddRequest">"crewAddRequest"</a>
 Occurs when a player requests to add the world to their crew.
@@ -1163,6 +1174,9 @@ Sent to change the badge.
 
 ### <a id="sm-clear">"clear"</a>
 Sent to clear the world.
+
+### <a id="sm-confirm">"confirm"</a>
+Join a friends only or nobody world as staff.
 
 ### <a id="sm-crown">"crown"</a>
 Sent to collect the gold crown.
