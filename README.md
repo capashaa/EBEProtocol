@@ -1,7 +1,7 @@
 # Every Build Exist Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
-Version of Protocol: 2.3.2
+Version of Protocol: 2.3.3
 
 ## Table of contents
 - [Game Information](#game-information)
@@ -69,6 +69,7 @@ Version of Protocol: 2.3.2
   - [pt](#rm-pt)
   - [registercommand](#rm-registercommand)
   - [reset](#rm-reset)
+  - [resetCoins](#rm-resetCoins)
   - [resetGlobalSwitches](#rm-resetGlobalSwitches)
   - [restoreProgress](#rm-restoreProgress)
   - [roomDescription](#rm-roomDescription)
@@ -131,6 +132,7 @@ Version of Protocol: 2.3.2
   - [rejectAddToCrew](#sm-rejectAddToCrew)
   - [requestAddToCrew](#sm-requestAddToCrew)
   - [reset](#sm-reset)
+  - [resetCoins](#sm-resetCoins)
   - [save](#sm-save)
   - [say](#sm-say)
   - [setAllowSpectating](#sm-setAllowSpectating)
@@ -166,7 +168,7 @@ ___
 # <a id="game-information">Game Information</a>
 ```
 GameID = every-build-exists-d6aoqro023pzodrp9jhw
-Version = 230
+Version = 233
 ```
 
 *NOTE: the game ID is required to log into PlayerIO to send requests.*
@@ -175,10 +177,10 @@ Version = 230
 
 | Type        | Room Name | Description
 | ----        | --------- |  --------- 
-| Normal      | Everybuildexists{version} | Join the EBE Worlds. To use/read commands read inside this document. |
-| Public | Public | Join the EBE Worlds. To use/read commands read inside this document.
-| Beta        | Beta{version} | Join Beta worlds. |
-| Lobby       | Lobby{version} | Join Lobby. If you want to execute commands or read them, look in Lobby documentations. |
+| Normal      | Everybuildexists{version} | Join the EBE Worlds. To use/read commands, read inside this document. |
+| Public | Public | Join the EBE Worlds. To use/read commands, read inside this document.
+| Beta        | Beta{version} | Join Beta worlds. To use/read commands, read inside this document. |
+| Lobby       | Lobby{version} | Join Lobby. If you want to execute commands or read them, look in [Lobby documentations](https://github.com/capashaa/EBEProtocol/blob/main/Lobby.md). |
 | Crew Lobby  | CrewLobby{version} | Join crew lobby |
 | Lobby Guest | LobbyGuest{version} | Join Guest lobby |
 
@@ -830,6 +832,13 @@ Occurs when world is reverted to the last save using the /loadlevel command.
 | `1` | `[...]`  | `[...]` | The serialized world data.
 | `n` | `String` | we      | Indicates the end of the world data.
 
+### <a id="rm-resetCoins">"resetCoins"</a>  
+Occurs when player is touching resetCoins block.
+| Id  | Type     | Name    | Description  
+| --- | ----     | ----    | -----------  
+| `0` | `Integer` | Player Id      | The player's id.  
+| `1` | `Boolean`  | Coin type | True = orange, False = blue.  
+
 ### <a id="rm-resetGlobalSwitches">"resetGlobalSwitches"</a>
 Occurs when global switches are reset.
 
@@ -1350,6 +1359,15 @@ Sent to reset progress.
 | --- | ----   | ---- | -----------
 | `0` | `UInt` | X    | The x coordinate of the reset block's position.
 | `1` | `UInt` | Y    | The y coordinate of the reset block's position.
+
+### <a id="sm-resetCoins">"resetCoins"</a>
+Sent to use resetCoins feature.
+
+| Id  | Type   | Name | Description
+| --- | ----   | ---- | -----------
+| `0` | `UInt` | X    | The x coordinate of the resetCoin block's position.
+| `1` | `UInt` | Y    | The y coordinate of the resetCoin block's position.
+| `2` | `Boolean` | Coin Type    | True = orange, False = blue coins.
 
 ### <a id="sm-say">"say"</a>
 Sent to say a chat message.
