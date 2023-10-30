@@ -761,7 +761,15 @@ Occurs when the minimap's visibility is changed.
 
 | Id  | Type      | Name            | Description
 | --- | ----      | ----            | -----------
-| `0` | `Boolean` | Minimap Enabled | Value indicating whether the minimap is now enabled.
+| `0` | `Boolean` | Minimap Enabled | Value indicating whether the minimap is enabled or not.
+
+### <a id="rm-mod">"mod"</a>
+Occurs when player goes into Moderator Mode.
+
+| Id  | Type      | Name      | Description
+| --- | ----      | ----      | -----------
+| `0` | `Integer` | Player Id | The player's id.  
+| `1` | `Boolean` | Moderator Mode     | Value indicating whether the player is in moderator mode or not.  
 
 ### <a id="rm-muted">"muted"</a>
 Occurs when you muted or un-muted a player.
@@ -769,7 +777,7 @@ Occurs when you muted or un-muted a player.
 | Id  | Type      | Name      | Description
 | --- | ----      | ----      | -----------
 | `0` | `Integer` | Player Id | The player's id.
-| `1` | `Boolean` | Muted     | Value indicating whether the player is now muted.
+| `1` | `Boolean` | Muted     | Value indicating whether the player is muted.
 
 ### <a id="rm-pm">"pm"</a>
 Occurs when a player send a private message
