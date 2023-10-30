@@ -383,9 +383,9 @@ ___
 | Image | Id | Name
 | ----- | ----- | ----------
 | Nothing | `0`   | None
-| ![dotred](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_red.png) | `1`   | Red
-| ![dotblue](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_blue.png) | `2`   | Blue
-| ![dotgreen](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_green.png) | `3`   | Green
-| ![dotcyan](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_cyan.png) | `4`   | Cyan
-| ![dotmagenta](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_magenta.png) | `5`   | Magenta
-| ![dotyellow](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_yellow.png) | `6`   | Yellow
+| ![dotred](https://github.com/capashaa/EBEProtocol/blob/main/images/dots_red.png) | `1`   | Red
+| ![dotblue](https://github.com/capashaa/EBEProtocol/blob/main/images/dots_blue.png) | `2`   | Blue
+| ![dotgreen](https://github.com/capashaa/EBEProtocol/blob/main/images/dots_green.png) | `3`   | Green
+| ![dotcyan](https://github.com/capashaa/EBEProtocol/blob/main/images/dots_cyan.png) | `4`   | Cyan
+| ![dotmagenta](https://github.com/capashaa/EBEProtocol/blob/main/images/dots_magenta.png) | `5`   | Magenta
+| ![dotyellow](https://github.com/capashaa/EBEProtocol/blob/main/images/dots_yellow.png) | `6`   | Yellow
