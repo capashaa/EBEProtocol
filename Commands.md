@@ -1,30 +1,32 @@
 This list is outdated. Will be updated in the future.
 # Table of Contents
 - [Owner only commands](#commands-owner)
-  - [/bgcolor](#command-bgcolor)
+  - [/bgcolor, /bgcolour](#command-bgcolor)
   - [/clear](#command-clear)
-  - [/cleareffects /ce](#command-cleareffects)
+  - [/cleareffects, /ce](#command-cleareffects)
   - [/forcefly](#command-forcefly)
   - [/forgive](#command-forgive)
   - [/givecrown](#command-givecrown)
-  - [/giveedit /gedit /ge](#command-giveedit)
-  - [/giveeffect /geffect](#command-giveeffect)
+  - [/giveedit, /gedit, /ge](#command-giveedit)
+  - [/giveeffect, /geffect](#command-giveeffect)
   - [/givegod](#command-givegod)
   - [/hidelobby](#command-hidelobby)
+  - [/hide secrets](#command-hidesecrets)
   - [/kick](#command-kick)
   - [/kill](#command-kill)
   - [/killall](#command-killall)
   - [/listportals](#command-listportals)
   - [/loadlevel](#command-loadlevel)
   - [/removecrown](#command-removecrown)
-  - [/removeedit /redit /re](#command-removeedit)
+  - [/removeedit, /redit, /re](#command-removeedit)
   - [/removeeffect](#command-removeeffect)
   - [/removegod](#command-removegod)
   - [/reset](#command-reset)
   - [/resetall](#command-resetall)
   - [/respawnall](#command-respawnall)
   - [/setteam](#command-setteam)
-  - [/teleport /tele /tp](#command-teleport)
+  - [/show secrets](#command-showsecrets)
+  - [/teleport, /tele, /tp](#command-teleport)
   - [/visible](#command-visible)
 - [Commands for everyone](#commands-everyone)
   - [/clearchat](#command-clearchat)
@@ -33,14 +35,14 @@ This list is outdated. Will be updated in the future.
   - [/inspect](#command-inspect)
   - [/mute](#command-mute)
   - [/pm](#command-pm)
-  - [/reportabuse /report /rep](#command-reportabuse)
+  - [/reportabuse, /report, /rep](#command-reportabuse)
   - [/roomid](#command-roomid)
   - [/spectate /spec](#command-spectate)
-  - [/unumte](#command-unmute)
+  - [/unmute](#command-unmute)
 
 # <a id="commands-owner">Owner only commands</a>
 
-### <a id="command-bgcolor">/bgcolor /bc</a>
+### <a id="command-bgcolor">/bgcolor, /bgcolur</a>
 Change the world's background color.
 
 #### `/bgcolor #{6 digit color hex}`
@@ -57,7 +59,7 @@ Clear the world.
 *No arguments*
 
 ___
-### <a id="command-cleareffects">/cleareffects /ce</a>
+### <a id="command-cleareffects">/cleareffects, /ce</a>
 Remove all effects from player.
 
 #### `/cleareffects {username}`
@@ -97,7 +99,7 @@ Give crown to a player with the specified username.
 - `{username}` - Username of the player for which to give crown.
 
 ___
-### <a id="command-giveedit">/giveedit /gedit /ge</a>
+### <a id="command-giveedit">/giveedit, /gedit, /ge</a>
 Give edit right to a player.
 
 #### `/giveedit {username}`
@@ -106,7 +108,7 @@ Give edit rights to a player with the specified username.
 - `{username}` - Username of the player for which to give edit rights.
 
 ___
-### <a id="command-giveeffect">/giveeffect /geffect</a>
+### <a id="command-giveeffect">/giveeffect, /geffect</a>
 Give effect to a player.
 
 #### `/giveeffect {username} {effect}`
@@ -135,6 +137,11 @@ Make the world invisible in the lobby.
 ### `/hidelobby false`
 Make the world visible in the lobby.
 
+___
+### <a id="command-hideecrets">/hide secrets</a>
+Hide secret blocks in the world.
+
+*No arguments*
 ___
 ### <a id="command-kick">/kick</a>
 Kick a player from the world.
@@ -182,7 +189,7 @@ Remove crown from a player which is currently wearing it.
 *No arguments*
 
 ___
-### <a id="command-removeedit">/removeedit /redit /re</a>
+### <a id="command-removeedit">/removeedit, /redit, /re</a>
 Take away edit rights from a player.
 
 #### `/removeedit {username}`
@@ -242,10 +249,14 @@ Move player to a team.
 Move player with the specified username to the specified team.
 
 - `{username}` - Username of player for which to change team.
-- `{team}` - Team to which to move player. For available options see: [Teams](#teams)
-
+- `{team}` - Team to which to move player. For available options see: [Teams](#teams)  
 ___
-### <a id="command-teleport">/teleport /tele /tp</a>
+### <a id="command-showsecrets">/show secrets</a>
+Show secret blocks in the world.
+
+*No arguments*
+___
+### <a id="command-teleport">/teleport, /tele, /tp</a>
 Teleport player to different position.
 
 #### `/teleport {username}`
@@ -325,7 +336,7 @@ Send the specified message to a player with the specified username.
 - `{message}` - The private message to send.
 
 ___
-### <a id="command-reportabuse">/reportabuse /report /rep</a>
+### <a id="command-reportabuse">/reportabuse, /report, /rep</a>
 Report a player for breaking the rules.
 
 #### `/reportabuse {username} {reason}`
@@ -364,3 +375,17 @@ Unmute a player.
 Unmute player with the specified username.
 
 - `{username}` - Username of player to unmute.
+
+___
+
+### <a id="teams">Teams</a>
+***Remember that you can use both name or id.***
+| Image | Id | Name
+| ----- | ----- | ----------
+| Nothing | `0`   | None
+| ![dotred](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_red.png) | `1`   | Red
+| ![dotblue](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_blue.png) | `2`   | Blue
+| ![dotgreen](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_green.png) | `3`   | Green
+| ![dotcyan](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_cyan.png) | `4`   | Cyan
+| ![dotmagenta](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_magenta.png) | `5`   | Magenta
+| ![dotyellow](https://github.com/capashaa/EBEProtocol/blob/main/images/dot_yellow.png) | `6`   | Yellow
