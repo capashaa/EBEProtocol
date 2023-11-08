@@ -224,8 +224,8 @@ Occurs when someone joins the world.
 | `20` | `Boolean`   | Is Friend          | Value indicating whether the player is a friend.
 | `21` | `Boolean`   | Gold Membership    | Value indicating whether the player has gold membership.
 | `22` | `Integer`   | Team               | The player's team id.  *See [Teams](#model-teams).*
-| `23` | `Integer`   | Aura Shape         | The player's aura shape id.
-| `24` | `Integer`   | Aura Color         | The player's aura color id.
+| `23` | `Integer`   | Aura Shape         | The player's aura shape id. *See [Auras](#model-aura)*
+| `24` | `Integer`   | Aura Color         | The player's aura color id. *See [Aura Colors](#model-aura-color)*
 | `25` | `Uint`      | Chat Color         | The player's chat color.
 | `26` | `String`    | Badge              | The player's badge id. *See [Badges](#model-badges).*
 | `27` | `Boolean`   | Crew Member        | Value indicating whether the player is a member of the crew to which belongs this world.
@@ -256,8 +256,8 @@ Occurs when a player changed their aura shape and/or color.
 | Id  | Type      | Name       | Description
 | --- | ----      | ----       | -----------
 | `0` | `Integer` | Player Id  | The player's id.
-| `1` | `Integer` | Aura Shape | The aura shape id.
-| `2` | `Integer` | Aura Color | The aura color id.
+| `1` | `Integer` | Aura Shape | The aura shape id. *See [Auras](#model-aura)*
+| `2` | `Integer` | Aura Color | The aura color id. *See [Aura Colors](#model-aura-color)*
 
 ### <a id="rm-autotext">"autotext"</a>
 Occurs when a player uses auto-text.
@@ -613,8 +613,8 @@ Occurs when the player initially joins the room.
 | `12`     | `Integer`   | SmileyAbove                | The player's smiley above.
 | `13`     | `Integer`   | SmileyBelow               | The player's smiley below.
 | `14`     | `Integer`   | SmileyWings                | The player's smiley wings.
-| `15`     | `Integer`   | Aura Shape                 | The player's aura shape id.
-| `16`     | `Integer`   | Aura Color                 | The player's aura color id.
+| `15`     | `Integer`   | Aura Shape                 | The player's aura shape id. *See [Auras](#model-aura)*
+| `16`     | `Integer`   | Aura Color                 | The player's aura color id. *See [Aura Color](#model-aura-color)*
 | `17`    | `Double`    | X                          | The x coordinate of the player's spawn position.
 | `18`    | `Double`    | Y                          | The y coordinate of the player's spawn position.
 | `19`    | `UInt`      | Chat Color                 | The player's chat color.
@@ -837,7 +837,7 @@ Occurs when world is reverted to the last save using the /loadlevel command.
 | Id  | Type     | Name    | Description
 | --- | ----     | ----    | -----------
 | `0` | `String` | ws      | Indicates the start of the world data.
-| `1` | `[...]`  | `[...]` | The serialized world data.
+| `1` | `ByteArray`  | Data | The serialized world data.
 | `n` | `String` | we      | Indicates the end of the world data.
 
 ### <a id="rm-resetCoins">"resetCoins"</a>  
@@ -1064,8 +1064,8 @@ Sent to change aura shape and/or color.
 
 | Id  | Type      | Name       | Description
 | --- | ----      | ----       | -----------
-| `0` | `Integer` | Aura Shape | The aura shape id.
-| `1` | `Integer` | Aura Color | The aura color id.
+| `0` | `Integer` | Aura Shape | The aura shape id. *See [Auras](#model-aura)*
+| `1` | `Integer` | Aura Color | The aura color id. *See [Aura Colors](#model-aura-color)*
 
 ### <a id="sm-autosay">"autosay"</a>
 Sent to say an auto-say message.
@@ -1602,6 +1602,47 @@ sent to server to remove a custom slash command
 | ![TeamCyan](https://github.com/capashaa/EBEProtocol/blob/main/images/TeamCyan.png) | `4`   | Cyan
 | ![TeamMagenta](https://github.com/capashaa/EBEProtocol/blob/main/images/TeamMagenta.png) | `5`   | Magenta
 | ![TeamYellow](https://github.com/capashaa/EBEProtocol/blob/main/images/TeamYellow.png) | `6`   | Yellow
+
+### <a id="model-aura">Aura</a>
+
+| Id | Name  
+| ---- | ----- |
+| `0`   | `Default`  
+| `1`   | `Pinwheel`
+| `2`   | `Torus`
+| `3`   | `Ornate`
+| `4`   | `Spiral`
+| `5`   | `Star`
+| `6`   | `Snowflake`
+| `7`   | `Atom`
+| `8`   | `Sawblade`
+| `9`   | `Target`
+| `10`  | `Bubble`
+| `11`  | `Galaxy`
+| `12`  | `Heart`
+| `13`  | `Sunflower`
+
+### <a id="model-aura-color">Aura Color</a>
+
+|  Id | Name
+| ---- | ----- |
+| `0`   | `White`
+| `1`   | `Red`
+| `2`   | `Blue`
+| `3`   | `Yellow`
+| `4`   | `Green`
+| `5`   | `Purple`
+| `6`   | `Orange`
+| `7`   | `Cyan`
+| `8`   | `Gold`
+| `9`   | `Pink`
+| `10`  | `Indigo`
+| `11`  | `Lime`
+| `12`  | `Black`
+| `13`  | `Teal`
+| `14`  | `Gray`
+| `15`  | `Amaranth`
+
 
 ### <a id="model-npcid">NPC</a>
 
