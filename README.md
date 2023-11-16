@@ -1,7 +1,7 @@
 # Every Build Exist Messages Protocol
 This repository contains documentation on the PlayerIO based Every Build Exists API.  
 
-Version of Protocol: 2.3.3
+Game Version: 2.3.4 (More protocol incoming)
 
 ## Table of contents
 - [Game Information](#game-information)
@@ -1620,7 +1620,7 @@ sent to server to remove a custom slash command
 | `10`  | `Bubble`
 | `11`  | `Galaxy`
 | `12`  | `Heart`
-| `13`  | `Sunflower`
+| `13`  | `Flower`
 
 ### <a id="model-aura-color">Aura Color</a>
 
@@ -1642,6 +1642,8 @@ sent to server to remove a custom slash command
 | `13`  | `Teal`
 | `14`  | `Gray`
 | `15`  | `Amaranth`
+| `16`  | `Brown`  
+| `17`  | `Peach`
 
 
 ### <a id="model-npcid">NPC</a>
