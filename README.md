@@ -67,6 +67,7 @@ Game Version: 2.3.4 (More protocol incoming)
   - [mod](#rm-mod)
   - [muted](#rm-muted)
   - [pm](#rm-pm)
+  - [pointers](#rm-points)
   - [ps](#rm-ps)
   - [psi](#rm-psi)
   - [pt](#rm-pt) - Portal Blocks
@@ -829,6 +830,15 @@ Occurs when a player send a private message
 | `0` | `Integer` | Player Id   | The player's id.
 | `1` | `String`  | Message     | The message from you or sent to you
 | `2` | `Boolean` | Incoming    | Incoming means the message is sent to you (true), or from you (false)
+
+### <a id="rm-points">"points"</a>  
+Occurs when a player touches pointers  
+| Id  | Type      | Name        | Description
+| --- | ----      | ----        | -----------
+| `0` | `Integer` | Player Id   | The player's id.
+| `1` | `Integer`  | Value     | The pointer value.
+| `2` | `Uint` | Color        | The color of the pointer.
+| `3` | `Boolean` | Inf      | Unknown
 
 ### <a id="rm-ps">"ps"</a>
 Occurs when a player touches a switch.
