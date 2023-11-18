@@ -13,15 +13,18 @@ Game Version: 2.3.4 (More protocol incoming)
   - [allowSpectating](#rm-allowSpectating)
   - [aura](#rm-aura)
   - [autotext](#rm-autotext)
-  - [b](#rm-b)
+  - [b](#rm-b) - Blocks
   - [backgroundColor](#rm-backgroundColor)
   - [badgeChange](#rm-badgeChange)
-  - [banned](#rm-banned)
-  - [bc](#rm-bc)
-  - [bco](#rm-bco)
-  - [bn](#rm-bn)
-  - [br](#rm-br)
-  - [bs](#rm-bs)
+  - [banned](#rm-banned)      
+  - [bc](#rm-bc) - Trophy Block    
+  - [bco](#rm-bco) - Colored Blocks
+  - [bn](#rm-bn) - NPC Blocks
+  - [br](#rm-br) - Rotation Blocks
+  - [bs](#rm-bs) - Sound Blocks
+  - [bpo](#rm-bpo) - Counter Blocks
+  - [bt](#rm-bt) - Tri-Backgrounds blocks
+  - [bzo](#rm-bzo) - Vision Zone Blocks
   - [c](#rm-c)
   - [campaignRewards](#rm-campaignRewards)
   - [canAddToCrews](#rm-canAddToCrews)
@@ -52,7 +55,7 @@ Game Version: 2.3.4 (More protocol incoming)
   - [k](#rm-k)
   - [kill](#rm-kill)
   - [ks](#rm-ks)
-  - [lb](#rm-lb)
+  - [lb](#rm-lb) - Label Blocks
   - [left](#rm-left)
   - [liked](#rm-liked)
   - [lobbyPreviewEnabled](#rm-lobbyPreviewEnabled)
@@ -66,7 +69,7 @@ Game Version: 2.3.4 (More protocol incoming)
   - [pm](#rm-pm)
   - [ps](#rm-ps)
   - [psi](#rm-psi)
-  - [pt](#rm-pt)
+  - [pt](#rm-pt) - Portal Blocks
   - [registercommand](#rm-registercommand)
   - [reset](#rm-reset)
   - [resetCoins](#rm-resetCoins)
@@ -85,14 +88,14 @@ Game Version: 2.3.4 (More protocol incoming)
   - [teleport](#rm-teleport)
   - [time](#rm-time)
   - [toggleGod](#rm-toggleGod)
-  - [ts](#rm-ts)
+  - [ts](#rm-ts) - Sign Blocks
   - [unfavorited](#rm-unfavorited)
   - [unliked](#rm-unliked)
   - [unregistercommand](#rm-unregistercommand)
   - [updatemeta](#rm-updatemeta)
   - [upgrade](#rm-upgrade)
   - [worldReleased](#rm-worldReleased)
-  - [wp](#rm-wp)
+  - [wp](#rm-wp) - World Portal Blocks
   - [write](#rm-write)
 - [Send Messages](#send-messages)
   - [access](#sm-access)
@@ -308,17 +311,18 @@ Occurs when a block with a number value is placed in the world or effect.
 | `4` | `UInt` | Player Id    | The id of the player which placed this block.
 
 ### <a id="rm-bco">"bco"</a>
-Occurs when a block that is using a color get placed.  
-> ID: 631, 632, 633
+Occurs when a block that is using a hex color.  
+Backgrounds, Foregrounds, Spikes.  
 
 | Id  | Type   | Name         | Description
 | --- | ----   | ----         | -----------
 | `0` | `UInt` | X            | The x coordinate of the block's position.
 | `1` | `UInt` | Y            | The y coordinate of the block's position.
-| `2` | `UInt` | Block Id     | The block's id. See [Block ids](#model-cblocks).
+| `2` | `UInt` | Block Id     | The block's id.
 | `3` | `UInt` | Colour       | The decimal number of the colour.
-| `4` | `Integer`  | Layer        | The layer of the block.
-| `5` | `UInt` | Player Id        | The id of the player which placed this block.
+| `4` | `Integer`  | Layer    | The layer of the block.
+| `5` | `Integer` | Rotation  | The rotation of the block. (if -1, no rotation)
+| `6` | `UInt` | Player Id    | The id of the player which placed this block.
 
 
 
@@ -335,6 +339,21 @@ Occurs when placing a NPC in the world.
 | `5` | `String` | NPC Text     | The second text from the NPC
 | `6` | `String` | NPC Text     | The third text from the NPC
 | `7` | `UInt`   | Player Id    | The id of the player which placed this NPC.
+
+
+### <a id="rm-br">"bpo"</a>
+Occurs when a counter block is placed.
+
+| Id  | Type      | Name      | Description
+| --- | ----      | ----      | -----------
+| `0` | `UInt`    | X         | The x coordinate of the block's position.
+| `1` | `UInt`    | Y         | The y coordinate of the block's position.
+| `2` | `UInt`    | Block Id  | The block's id.
+| `3` | `Integer`    | Amount    | The amount.
+| `4` | `Uint` | Colour     | The colour of the block.
+| `5` | `UInt`    | Player Id | The id of the player which placed this block.
+
+
 
 ### <a id="rm-br">"br"</a>
 Occurs when a morphable block is placed in the world or Gravity Effect.
@@ -358,6 +377,29 @@ Occurs when a sound block is placed in the world.
 | `2` | `UInt`    | Block Id  | The block id.
 | `3` | `Integer` | Sound Id  | The sound id.
 | `4` | `UInt`    | Player Id | The id of the player which placed this block.
+
+### <a id="rm-bt">"bt"</a>
+Occurs when a tribackground is placed.
+
+| Id  | Type      | Name         | Description
+| --- | ----      | ----         | -----------
+| `0` | `UInt`    | X            | The x coordinate of the block's position.
+| `1` | `UInt`    | Y            | The y coordinate of the block's position.
+| `2` | `UInt`    | Block Id     | The block id.
+| `3` | `Uint`    | Rotation Id  | The rotation value.
+| `4` | `Integer` | Colour       | The colour of the block.  
+| `3` | `Uint`    | Player Id    | The id of the player which placed this block.
+
+### <a id="rm-bzo">"bzo"</a>
+Occurs when a vision block is placed.
+
+| Id  | Type      | Name         | Description
+| --- | ----      | ----         | -----------
+| `0` | `UInt`    | X            | The x coordinate of the block's position.
+| `1` | `UInt`    | Y            | The y coordinate of the block's position.
+| `2` | `UInt`    | Block Id     | The block id.
+| `3` | `Uint`    | Rotation Id  | The rotation value.
+| `4` | `Uint`    | Player Id    | The id of the player which placed this block.
 
 ### <a id="rm-c">"c"</a>
 Occurs when a player gets a blue or gold coin.
@@ -1079,20 +1121,20 @@ Sent to place a block in the world.
 
 | Id  | Type      | Name     | Description
 | --- | ----      | ----     | -----------
-| `0` | `Integer` | Layer    | The layer id.
+| `0` | `Integer` | Layer    | The layer id. (0 = Foreground, 1 = Background, 2 = Vision Zone, 3 = Tri-Background)
 | `1` | `Integer` | X        | The x coordinate of the block's position.
 | `2` | `Integer` | Y        | The y coordinate of the block's position.
 | `3` | `Integer` | Block Id | The block id.
 
 Additional arguments:
 
-- For sound blocks:
+> For sound blocks:
 
 | Id  | Type      | Name     | Description
 | --- | ----      | ----     | -----------
 | `4` | `Integer` | Sound Id | The sound id.
 
-- For admin label:
+> For admin label:
 
 | Id  | Type     | Name       | Description
 | --- | ----     | ----       | -----------
@@ -1100,13 +1142,13 @@ Additional arguments:
 | `5` | `String` | Text Colour | The text colour in Hex.
 | `6` | `Integer`| Wrap       | Wrap the text.
 
-- For blocks with a number value:
+> For blocks with a number value:
 
 | Id  | Type      | Name         | Description
 | --- | ----      | ----         | -----------
 | `4` | `Integer` | Number Value | The number value.
 
-- For portals:
+> For portals:
 
 | Id  | Type      | Name            | Description
 | --- | ----      | ----            | -----------
@@ -1114,21 +1156,21 @@ Additional arguments:
 | `5` | `Integer` | Portal Id       | The portal id.
 | `6` | `Integer` | Portal Target   | The portal target id.
 
-- For world portals:
+> For world portals:
 
 | Id  | Type     | Name   | Description
 | --- | ----     | ----   | -----------
 | `4` | `String` | Target | The world portal target.
 | `5` | `Integer` | Spawn ID | The world portal spawn id.
 
-- For signs:
+> For signs:
 
 | Id  | Type      | Name      | Description
 | --- | ----      | ----      | -----------
 | `4` | `String`  | Text      | The text.
 | `5` | `Integer` | Sign Type | The sign type.
 
-- For NPC blocks:
+> For NPC blocks:
 
 | Id  | Type      | Name           | Description
 | --- | ----      | ----           | -----------
@@ -1137,7 +1179,7 @@ Additional arguments:
 | `6` | `String`  | Second Message | The second NPC message
 | `7` | `String`  | Third Message  | The third NPC message
 
-- For Coloured blocks:
+> For Coloured blocks:
 
 **How to convert Colour in C#**
 https://pastebin.com/WqG5HjUN
@@ -1145,6 +1187,15 @@ https://pastebin.com/WqG5HjUN
 | Id  | Type      | Name           | Description
 | --- | ----      | ----           | -----------
 | `4` | `Uint`    | Colour         | The coloured block in decimal.
+| `...` | `Uint` | Rotation | The rotation for spikes.
+
+> For Coloured tri-backgrounds:
+
+
+| Id  | Type      | Name           | Description
+| --- | ----      | ----           | -----------
+| `4` | `Uint`    | Rotation       | The rotation of block.
+| `5` | `Uint` | Colour | The coloured block in decimal.
 
 
 
