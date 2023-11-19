@@ -838,7 +838,7 @@ Occurs when a player touches pointers
 | `0` | `Integer` | Player Id   | The player's id.
 | `1` | `Integer`  | Value     | The pointer value.
 | `2` | `Uint` | Color        | The color of the pointer.
-| `3` | `Boolean` | Inf      | Unknown
+| `3` | `Boolean` | Reusable      | Reusable or not.
 
 ### <a id="rm-ps">"ps"</a>
 Occurs when a player touches a switch.
