@@ -235,8 +235,10 @@ Occurs when someone joins the world.
 | `27` | `Boolean`   | Crew Member        | Value indicating whether the player is a member of the crew to which belongs this world.
 | `28` | `ByteArray` | Purple Switches    | Byte array of purple switch states.
 | `29` | `Boolean`   | Can Edit           | Value indicating whether the player can edit in this world.
-| `30` | `Boolean`   | Can Toggle Godmode | Value indicating whether the player can toggle godmode or not.
-
+| `30` | `Boolean`   | Can Toggle Godmode | Value indicating whether the player can toggle godmode or not.  
+| `31` | `Integer` | Total Pointers | How many pointers the player have.  
+|`[...]` | `Uint` | Pointer value | The pointer value  
+|`[...]` | `int` | Pointer color | The pointer color  
 > **NOTE:** This can only be received by the world owner.
 
 ### <a id="rm-addedToCrew">"addedToCrew"</a>
