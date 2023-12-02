@@ -462,7 +462,7 @@ Occurs when the world is cleared.
 | --- | ----      | ----            | -----------
 | `0` | `Integer` | Width           | The width of the world.
 | `1` | `Integer` | Height          | The height of the world.
-| `2` | `UInt`    | Border Block Id | The id of the block used as a world border.
+| `2` | `UInt`    | Border color | The color of the block used as a world border.
 | `3` | `UInt`    | Fill Block Id   | The id of the block used to fill the world.
 
 ### <a id="rm-command">"command"</a>
